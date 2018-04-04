@@ -2,6 +2,7 @@
 % gegeven knooppuntenrij `nodes` en met orde `order` in het punt x 
 % volgens de recursiebetrekking voor splines.
 function value = normal_spline(index, order, nodes, x)
+    % order == 1 komt overeen met graad == 0
     if order == 1
         if (nodes(index) <= x) && (x < nodes(index + 1))
             value = 1;
