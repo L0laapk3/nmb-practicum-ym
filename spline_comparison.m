@@ -14,7 +14,7 @@ figure
 for degree = 1:3
     for j = 1:length(x)
         de_Boor(degree, j) = de_Boor_eval(coefficients, nodes, degree, x(j));
-        splines(degree, j) = normal_spline(spline_index, degree + 1, nodes, x(j));
+        splines(degree, j) = normal_spline(spline_index, degree, nodes, x(j));
     end
     % Plot splines geëvalueerd volgens recursiebetrekking
     subplot(2, 3, degree)
