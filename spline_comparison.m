@@ -3,11 +3,13 @@ degree = 3;
 spline_index = 4;
 nodes = linspace(0, 10, nb_nodes + 2*degree);
 x = linspace(nodes(degree + 1), nodes(length(nodes) - degree), 100);
+% Alle spline coefficiënten op nul behalve één.
 coefficients = zeros(1, nb_nodes + degree);
 coefficients(spline_index) = 1;
 de_Boor = zeros(3, length(x));
 splines = zeros(3, length(x));
 
+% Vergelijkende plot opstellen
 figure
 for degree = 1:3
     for j = 1:length(x)

@@ -1,6 +1,6 @@
 % Evalueert een splinefunctie s(x) van graad `degree` met als coefficienten
-% `spline_coefficients` en als knooppunten `nodes`. De rij index 1 van de
-% vetoren met knooppunten en coefficienten komt overeen met de index -k.
+% `spline_coefficients` en als knooppunten `nodes`. De matrix index 1 van de
+% matrices met knooppunten en coefficienten komt overeen met de index -k.
 function f = de_Boor_eval(coefficients, nodes, degree, x)
     f = 0;
     for index = 1:length(nodes)-1
