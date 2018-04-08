@@ -1,11 +1,10 @@
 nb_nodes = 30;
 degree = 3;
-interval = [-3, 3];
+interval = [-2, 2];
 nodes = linspace(interval(1), interval(2), nb_nodes + 2*degree);
-x = linspace(interval(1), interval(2), 200);
-f = zeros(1, length(x));
-for i = 1:length(x)
-    f(i) = sin(20.*x(i))/(100*x(i).^2 + 5);
-end
-res = kkb_spline(nodes, x, f, x, degree);
-plot(x, f, x, res);
+x = linspace(-1, 1, 100);
+y = linspace(-1, 1, 200);
+f = sin(20.*x)./(100*x.^2 + 5);
+fy = sin(20.*y)./(100*y.^2 + 5);
+res = kkb_spline(nodes, x, f, y, degree);
+plot(y, fy, y, res);
