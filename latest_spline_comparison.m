@@ -5,7 +5,7 @@ nb_nodes = 10;
 coefficients = zeros(3, nb_nodes + degree);
 coefficients(1, spline_index + 1) = 1;
 coefficients(2, spline_index + 2) = 1;
-coefficients(3, spline_index + 3) = 1
+coefficients(3, spline_index + 3) = 1;
 % Verdere initialisatie:
 nodes = linspace(0, nb_nodes + 2*degree - 1, nb_nodes + 2*degree);
 x = linspace(nodes(degree + 1), nodes(length(nodes) - degree), 100);

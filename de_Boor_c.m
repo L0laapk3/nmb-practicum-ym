@@ -1,5 +1,4 @@
 function val = de_Boor_c(coefficients, nodes, k, r, index, x)
-    val = 0;
     if r == 0
         val = coefficients(index);
     else
