@@ -5,7 +5,7 @@ degree = 3;
 
 figure(1)
 % Foutencurve plotten
-node_list = linspace(2, 200);
+node_list = linspace(2, 100);
 f_results = node_list;
 ruis_results = node_list;
 for i = node_list(1):length(node_list)
