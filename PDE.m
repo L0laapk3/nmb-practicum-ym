@@ -22,13 +22,13 @@ xx = 0:h:(N+1)*h;
 figure() %3d-oppervlak
 s = surf(XX,YY,UResult);
 hold on
-contour3(XX, YY, UResult, min(U(:)):(max(U(:))-min(U(:)))/17:max(U(:)), 'LineWidth',1, 'Color','k')
+contour3(XX, YY, UResult, min(U(:)):(max(U(:))-min(U(:)))/17:max(U(:)), 'LineWidth',1, 'Color','k') %contourlijnen op 3d-oppervlak
 hold off
 xlabel('x');
 ylabel('y');
 zlabel('u');
 s.EdgeColor = 'none';
-figure()
+figure()%2d-contour
 contour(XX,YY,UResult,min(U(:)):(max(U(:))-min(U(:)))/37:max(U(:)),'ShowText','on','TextList',min(U(:)):(max(U(:))-min(U(:)))*4/37:max(U(:)));
 xlabel('x');
 ylabel('y');
