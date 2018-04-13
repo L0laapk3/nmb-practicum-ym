@@ -8,7 +8,7 @@ figure(1)
 node_list = linspace(2, 100);
 f_results = node_list;
 ruis_results = node_list;
-for i = 1:length(node_list)
+for i = node_list(1):length(node_list)
     nodes = linspace(-1, 1, node_list(i));
     nb_nodes = length(nodes);
     left = linspace(nodes(1) - (nodes(2)-nodes(1))*degree, nodes(1) - (nodes(2)-nodes(1)), degree);
@@ -23,7 +23,7 @@ hold on
 plot(node_list, ruis_results, 'ob');
 title('Fout in functie van aantal knooppunten');
 xlabel('Aantal knooppunten');
-legend('norm(f\_ruis-z)', 'norm(f-z)');
+legend('norm(f-z)', 'norm(f\_ruis-z)');
 
 [val, best_f_index] = min(f_results)
 [val, best_f_ruis_index] = min(ruis_results)
