@@ -2,7 +2,7 @@ N = 512;
 f = @(x,y) heaviside(x-0.4).*heaviside(-x+0.6).*heaviside(y-0.4).*heaviside(-y+0.6) .* (-100);
 north = @(x) 1;
 east = @(y) 2;
-south = @(x) 2 + sin(pi*x/2);
+south = @(x) 2+ sin(pi*x/2);
 west = @(y) 3;
 
 U = poisson(f, N, north, east, south, west);
@@ -22,14 +22,13 @@ xx = 0:h:(N+1)*h;
 figure() %3d-oppervlak
 s = surf(XX,YY,UResult);
 hold on
-contour3(XX, YY, UResult, min(UResult):(max(UResult)-min(UResult))/17:max(UResult), 'LineWidth',1, 'Color','k') %contourlijnen op 3d-oppervlak
+contour3(XX, YY, UResult, min(U(:)):(max(U(:))-min(U(:)))/17:max(U(:)), 'LineWidth',1, 'Color','k')
 hold off
 xlabel('x');
 ylabel('y');
 zlabel('u');
 s.EdgeColor = 'none';
-
-figure()%2d-contour
-contour(XX,YY,UResult,min(UResult):(max(UResult)-min(UResult))/37:max(UResult),'ShowText','on','TextList',min(UResult):(max(UResult)-min(UResult))*4/37:max(UResult));
+figure()
+contour(XX,YY,UResult,min(U(:)):(max(U(:))-min(U(:)))/37:max(U(:)),'ShowText','on','TextList',min(U(:)):(max(U(:))-min(U(:)))*4/37:max(U(:)));
 xlabel('x');
 ylabel('y');
